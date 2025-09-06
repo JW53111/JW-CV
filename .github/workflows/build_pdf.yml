@@ -1,0 +1,38 @@
+name: Build PDF on Release
+
+# 只有在创建新的 release 时触发
+on:
+  release:
+    types: [created]
+
+permissions:
+  contents: write  # 用于上传 release 资产
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:TL2022-historic
+
+    steps:
+      # 拉取仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 安装依赖并编译 LaTeX
+      - name: Build PDF
+        run: |
+          apt-get update -y
+          apt-get install --no-install-recommends -y fonts-noto-cjk-extra npm
+          xelatex main.tex
+          xelatex main.tex
+          mkdir -p dist
+          mv main.pdf dist/
+
+      # 上传 PDF 到 release
+      - name: Attach PDF to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/main.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
