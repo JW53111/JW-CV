@@ -1,40 +1,43 @@
-name: Build and Release PDF
+name: Build PDF on Release
 
 on:
+  push:
+    tags:
+      - '*'       # 每次 push tag 都触发
   release:
-    types: [created]  # 当创建新 release 时触发
+    types: [created] # 创建新 release 也触发
+  workflow_dispatch: # 允许手动触发
 
 permissions:
-  contents: write
+  contents: write  # 允许上传 release 文件
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. 检出代码
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. 安装 TeX Live 和中文字体
-      - name: Install TeX Live
+      - name: Set up TeX Live
         run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-latex-extra fonts-noto-cjk
+          sudo apt-get update -y
+          sudo apt-get install --no-install-recommends -y texlive-xetex texlive-fonts-recommended texlive-latex-extra fonts-noto-cjk
 
-      # 3. 编译 main.tex
       - name: Build PDF
         run: |
-          xelatex main.tex
-          xelatex main.tex  # 双编译确保引用和目录更新
+          xelatex -interaction=nonstopmode main.tex
+          xelatex -interaction=nonstopmode main.tex
           mkdir -p dist
           mv main.pdf dist/
 
-      # 4. 上传 PDF 到 release
-      - name: Upload PDF to release
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-pdf
+          path: dist/main.pdf
+
+      - name: Publish PDF to Release
+        if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           files: dist/main.pdf
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
