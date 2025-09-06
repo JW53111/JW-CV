@@ -1,0 +1,90 @@
+% Document class and font size
+\documentclass[a4paper,9pt]{extarticle}
+
+% Packages
+\usepackage[utf8]{inputenc} % For input encoding
+\usepackage{geometry} % For page margins
+\geometry{letterpaper, margin=0.75in} % Set paper size and margins
+\usepackage{titlesec} % For section title formatting
+\usepackage{enumitem} % For itemized list formatting
+\usepackage{hyperref} % For hyperlinks
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+
+% Formatting
+\setlist{noitemsep} % Removes item separation
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule] % Section title format
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip} % Section title spacing
+%%%%%%%%%%
+
+% Begin document
+\begin{document}
+
+% Disable page numbers
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\thispagestyle{empty} % Remove header from the first page
+
+% Header
+\begin{flushleft}
+\textbf{\LARGE  Jiawu Wang, {s2282849@ed.ac.uk}}\\[2pt] % Name
+Undergraduate Student studying Mathematics with Statistics, University of Edinburgh, Edinburgh, United Kingdom
+\end{flushleft}
+
+% Education Section
+\section*{EDUCATION}
+\noindent\\
+\textbf{University of Edinburgh},  Edinburgh\hfill 09,2022  | 05,2026 \\ % University name and location
+Bachelor of Science:Mathematics With Statistics \hfill Cumulative GPA: 64/100 % Degree and GPA
+% Additional info
+
+
+% Experiences
+\section{Experience}
+\noindent
+\begin{itemize}
+    \item\textbf{PolymathJr Programme:}
+Modeling Bacteria Spread investigates the community transmission of Clostridioides difficile (C.difficile) using systems of ordinary differential equations (ODEs) to determine optimal strategies for mitigating the spread of this bacteria. Based on Sulyok data and model, now focus on building the model to find the ODE between c.difficle infection and influenced factor on different infected individuals. After researching, I use R to build a stochastic simulation based on GSSA (Gillesipe Stochastic Simulation Algorithm) and my teammates use Matlab for comparision.
+    \item \textbf{DataFest24:}
+A data analysis competition where my team utilized R for data visualization and model development. My team earned the Best Visualization award, which inspired me to further explore statistical research and statistical programming.
+    \item \textbf{Outreach Team:}
+A team organized by the University of Edinburgh dedicated to delivering high-quality mathematics outreach activities. Our highlight was the Edinburgh Science Festival, where my group focused on engaging the public with combinatorial problem-solving.
+    \item\textbf{course from Statistical project:}
+The project focusing on analysing the air condition quality in New York. We using R to model as a function of one variable to another variable. Computing the empirical CDFs to consider whether this variable plays an important role in this dataset. Here we use the theory of Bayesian inference and some distribution, including normal and poisson distribution to contribute the confidence interval and check the p-value.
+\end{itemize}
+
+
+
+% Experience Section
+\section*{SELECTED COURSES}
+\noindent
+\textbf{Bachelor's Courses}
+\begin{itemize}
+\item \textbf{Statistical Methodology:} Apply likelihood-based methods for estimation, confidence intervals, and hypothesis testing(including basic Bayesian inference for further study). Fit and analyze normal linear models, assess assumptions, and perform theoretical computations, using R to demonstrate simulations.
+
+\item \textbf{Stochastic Modelling:}  Introduction to Markov chain for preparing 4th Year study. It includes Discrete Time Markov Chain and Continuous Time Markov Chain.
+
+\item \textbf{Linear Programming and Modelling:} Introduction to Operational Research. Using Xpress to compute the optimal decision and study the simplex algorithm.
+
+\item \textbf{Financial Mathematics:} The course provides an introduction to financial markets, contracts, and fundamental investment strategies, emphasizing the concept of no-arbitrage and the time value of money. It includes a revision of key probability concepts such as random variables, distributions, and the Central Limit Theorem.
+
+Students will explore the binomial tree model for valuing financial contracts, applying risk-neutral probabilities and portfolio strategies for pricing. The course introduces stochastic analysis, covering Brownian motion, Ito calculus, stochastic differential equations, and the Black-Scholes model for option pricing.
+
+\item \textbf{Numerical ordinary Differential Equations and Applications:} Further study for the Honour Differential Equations, using appropriate symbolic and numerical methods in Python to solve and analyse differential equations. 
+\end{itemize}
+
+\item\textbf{Statistical Computing:}
+Construct simulation studies for given statistical models to assess the estimation and prediction performance of numerical statistical methods. Correctly interpret the output of numerical statistical methods in their motivating contexts. Also, apply proper scoring rules to out-of-sample prediction analysis and model selection.
+
+
+% Skills Section
+\section*{SKILLS}
+\begin{itemize}
+    \item \textbf{Programming:} Python, R, Latex
+    \item \textbf{Software:} Xpress, Words, Overleaf, Vscode
+    \item \textbf{Soft Skills:} Communication, Problem-solving, critical thinking, time management, hardworking, creativity
+\end{itemize}
+
+% End document
+\end{document}
