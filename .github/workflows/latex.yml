@@ -16,16 +16,17 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: texlive/texlive:TL2022-historic
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build
+      - name: Install TeX Live
         run: |
-          apt-get update -y
-          apt-get install --no-install-recommends -y fonts-noto-cjk-extra npm
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-lang-chinese texlive-fonts-recommended texlive-latex-extra fonts-noto-cjk-extra
+
+      - name: Build PDF
+        run: |
           xelatex main.tex
           xelatex main.tex
           mkdir dist
