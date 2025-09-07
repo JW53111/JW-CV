@@ -2,7 +2,7 @@ name: Build LaTeX PDF
 
 on:
   release:
-    types: [created]  # 当创建新 release 时触发
+    types: [published]  # 当创建新 release 时触发
   workflow_dispatch:   # 也可以手动触发
 
 permissions:
