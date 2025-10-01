@@ -15,8 +15,10 @@
 \setlist{noitemsep} % Removes item separation
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule] % Section title format
 \titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip} % Section title spacing
-%%%%%%%%%%
 
+% Increase font size for specific elements
+\usepackage{relsize} % For relative font sizing
+\setlength{\parskip}{1.0em} % Increase paragraph spacing
 % Begin document
 \begin{document}
 
@@ -35,7 +37,7 @@ Undergraduate Student studying Mathematics with Statistics, University of Edinbu
 % Education Section
 \section*{EDUCATION}
 \noindent\\
-\textbf{University of Edinburgh},  Edinburgh\hfill 09,2022  | 05,2026 \\ % University name and location
+\textbf{University of Edinburgh},  Edinburgh\hfill 09,2022  | 08,2026 \\ % University name and location
 Bachelor of Science:Mathematics With Statistics \hfill Cumulative GPA: 64/100 % Degree and GPA
 % Additional info
 
@@ -45,13 +47,15 @@ Bachelor of Science:Mathematics With Statistics \hfill Cumulative GPA: 64/100 % 
 \noindent
 \begin{itemize}
     \item\textbf{PolymathJr Programme:}
-Modeling Bacteria Spread investigates the community transmission of Clostridioides difficile (C.difficile) using systems of ordinary differential equations (ODEs) to determine optimal strategies for mitigating the spread of this bacteria. Based on Sulyok data and model, now focus on building the model to find the ODE between c.difficle infection and influenced factor on different infected individuals. After researching, I use R to build a stochastic simulation based on GSSA (Gillesipe Stochastic Simulation Algorithm) and my teammates use Matlab for comparision.
+Modeling Bacteria Spread investigates the community transmission of Clostridioides difficile (C.difficile) using systems of ordinary differential equations (ODEs) to determine optimal strategies for mitigating the spread of this bacteria. Based on Sulyok data and model, now focus on building the model to find the ODE between c.difficle infection and influenced factor on different infected individuals. After researching, I use R to build a stochastic simulation based on GSSA (Gillesipe Stochastic Simulation Algorithm) and my teammates use Matlab for comparision. This research will be published on JMM 2026 in Washington, D.C.
     \item \textbf{DataFest24:}
 A data analysis competition where my team utilized R for data visualization and model development. My team earned the Best Visualization award, which inspired me to further explore statistical research and statistical programming.
     \item \textbf{Outreach Team:}
 A team organized by the University of Edinburgh dedicated to delivering high-quality mathematics outreach activities. Our highlight was the Edinburgh Science Festival, where my group focused on engaging the public with combinatorial problem-solving.
-    \item\textbf{course from Statistical project:}
+    \item\textbf{Statistical project:}
 The project focusing on analysing the air condition quality in New York. We using R to model as a function of one variable to another variable. Computing the empirical CDFs to consider whether this variable plays an important role in this dataset. Here we use the theory of Bayesian inference and some distribution, including normal and poisson distribution to contribute the confidence interval and check the p-value.
+    \item \textbf{Mathematics Project:} 
+The topic for my undergraduate project is high-dimensional regression for mixed data. This project investigates the scalability of non-parametric regression methods when a high number of mixed observed data - consisting of continuous, categorical, functional data. It includes a comparison of theoretical properties of different estimators, and conducting a full statistical analysis on a high-dimensional data set.
 \end{itemize}
 
 
@@ -61,30 +65,30 @@ The project focusing on analysing the air condition quality in New York. We usin
 \noindent
 \textbf{Bachelor's Courses}
 \begin{itemize}
-\item \textbf{Statistical Methodology:} Apply likelihood-based methods for estimation, confidence intervals, and hypothesis testing(including basic Bayesian inference for further study). Fit and analyze normal linear models, assess assumptions, and perform theoretical computations, using R to demonstrate simulations.
+\item \textbf{Statistical Course:} In my undergraduate statistics study, courses were divided into descriptive and inferential statistics. I gained experience constructing simulation studies to assess estimation and prediction performance, interpreting statistical output in context, applying scoring rules for prediction and model selection, and using likelihood-based methods for estimation, confidence intervals, hypothesis testing, and Bayesian inference. I also learned to fit and analyze parametric regression models, assess assumptions, and perform theoretical computations, with practical implementation in R.
 
-\item \textbf{Stochastic Modelling:}  Introduction to Markov chain for preparing 4th Year study. It includes Discrete Time Markov Chain and Continuous Time Markov Chain.
+In my last semester, there is a course called machine learning in python which intended to provide an introduction to machine learning techniques. This includes a discussion of some of the theory and ideas behind these techniques, as well as a chance to apply them in practice using a suitable toolkit available in python. For example, Training, testing, generalisation, cross-validation, evaluating/comparing models in python.
 
 \item \textbf{Linear Programming and Modelling:} Introduction to Operational Research. Using Xpress to compute the optimal decision and study the simplex algorithm.
 
 \item \textbf{Financial Mathematics:} The course provides an introduction to financial markets, contracts, and fundamental investment strategies, emphasizing the concept of no-arbitrage and the time value of money. It includes a revision of key probability concepts such as random variables, distributions, and the Central Limit Theorem.
 
-Students will explore the binomial tree model for valuing financial contracts, applying risk-neutral probabilities and portfolio strategies for pricing. The course introduces stochastic analysis, covering Brownian motion, Ito calculus, stochastic differential equations, and the Black-Scholes model for option pricing.
+\item \textbf{Differential Equation Study:} In my undergraduate study, differential equation is one of core study topics, including solving system of ordinary differential equation, introduction to partial differential equation(mainly about heat equation), and applied stochastic differential equation. The applications of differential equations in many fields, such as financial assets price, biological population in a random environment, which inspired me in my summer research.
 
-\item \textbf{Numerical ordinary Differential Equations and Applications:} Further study for the Honour Differential Equations, using appropriate symbolic and numerical methods in Python to solve and analyse differential equations. 
-
-
-\item \textbf{Statistical Computing:}
-Construct simulation studies for given statistical models to assess the estimation and prediction performance of numerical statistical methods. Correctly interpret the output of numerical statistical methods in their motivating contexts. Also, apply proper scoring rules to out-of-sample prediction analysis and model selection.
 \end{itemize}
 
 % Skills Section
 \section*{SKILLS}
 \begin{itemize}
-    \item \textbf{Programming:} Python, R, Latex
-    \item \textbf{Software:} Xpress, Words, Overleaf, Vscode
-    \item \textbf{Soft Skills:} Communication, Problem-solving, critical thinking, time management, hardworking, creativity
+    \item \textbf{Programming:} Python, R, Latex, MySQL, Hadoop
+    \item \textbf{Software:} Xpress, Words, Overleaf, Vscode, Github
 \end{itemize}
 
+% Referee
+\section*{Referee}
+\begin{itemize}
+    \item \textbf{Burak Buke:} B.Buke@ed.ac.uk
+    \item \textbf{Torben Sell:} torben.sell@ed.ac.uk
+\end{itemize}
 % End document
 \end{document}
